@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Divison_Department: MyString
+  activity: MyString
+  financial_loss: MyString
+  Reputation_image: MyString
+  Stakeholder_impact: MyString
+  Regulatory_Statutory: MyString
+  overall_rating: MyString
+  comments: MyString
+  mao: MyString
+  person_interviewed: MyString
+  facality: MyString
+  date: MyString
+
+two:
+  Divison_Department: MyString
+  activity: MyString
+  financial_loss: MyString
+  Reputation_image: MyString
+  Stakeholder_impact: MyString
+  Regulatory_Statutory: MyString
+  overall_rating: MyString
+  comments: MyString
+  mao: MyString
+  person_interviewed: MyString
+  facality: MyString
+  date: MyString

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "assetlayout/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Asset</a></li>
+                        <li><a href="#EP" data-toggle="tab">Existing Asset</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+                            <table class="table table-bordered">
+                                <tr>
+    <th>Name</th>
+    <th>Related bus</th>
+    <th>Label</th>
+    <th>Type</th>
+    <th>Liabilities</th>
+    <th>Owner</th>
+    <th>Guardian</th>
+    <th>User</th>
+    <th>Classification</th>
+    <th>Container</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assets.each do |asset| %>
+  <tr>
+    <td><%= asset.name %></td>
+    <td><%= asset.related_bus %></td>
+    <td><%= asset.label %></td>
+    <td><%= asset.type %></td>
+    <td><%= asset.liabilities %></td>
+    <td><%= asset.owner %></td>
+    <td><%= asset.guardian %></td>
+    <td><%= asset.user %></td>
+    <td><%= asset.classification %></td>
+    <td><%= asset.container %></td>
+    <td><%= asset.description %></td>
+    <td><%= link_to 'Show', asset %></td>
+    <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+    <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+                        <br />
+                        <%= link_to 'New Asset', new_asset_path , :class => "pure-button pure-button-primary" %>
+                    </div>
+                    <div id="EP" class="tab-pane">
+                        <h4>Existing Asset</h4>
+                        <p> Coming Soon ...</p>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

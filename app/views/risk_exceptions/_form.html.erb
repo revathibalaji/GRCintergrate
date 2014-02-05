@@ -1,0 +1,33 @@
+<%= form_for(@risk_exception) do |f| %>
+  <% if @risk_exception.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@risk_exception.errors.count, "error") %> prohibited this risk_exception from being saved:</h2>
+
+      <ul>
+      <% @risk_exception.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Risk_Exception_Title %><br />
+    <%= f.text_field :Risk_Exception_Title %>
+  </div>
+  <div class="field">
+    <%= f.label :Description %><br />
+    <%= f.text_field :Description %>
+  </div>
+  <div class="field">
+    <%= f.label :Author %><br />
+    <%= f.text_field :Author %>
+  </div>
+  <div class="field">
+    <%= f.label :Expiration %><br />
+    <%= f.date_select :Expiration %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+     <%= render :partial => "risklayout/menu" %>
+    </div>
+    <div id="content-wrap">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Risk title:</b>
+  <%= @asset_risk_mgt.Risk_Title %>
+</p>
+
+<p>
+  <b>Applicable assets:</b>
+  <%= @asset_risk_mgt.Applicable_Assets %>
+</p>
+
+<p>
+  <b>Threats:</b>
+  <%= @asset_risk_mgt.Threats %>
+</p>
+<p>
+  <b></b>
+  <%= @asset_risk_mgt.Threats1 %>
+</p>
+
+<p>
+  <b>Vulnerabilities:</b>
+  <%= @asset_risk_mgt.Vulnerabilities %>
+</p>
+<p>
+  <b></b>
+  <%= @asset_risk_mgt.Vulnerabilities1 %>
+</p>
+
+<p>
+  <b>Risk classification:</b>
+  <%= @asset_risk_mgt.Risk_Classification %>
+</p>
+
+<p>
+  <b></b>
+  <%= @asset_risk_mgt.Risk_Classification1 %>
+</p>
+
+<p>
+  <b></b>
+  <%= @asset_risk_mgt.Risk_Classification2 %>
+</p>
+
+<p>
+  <b>Risk score:</b>
+  <%= @asset_risk_mgt.Risk_Score %>
+</p>
+
+<p>
+  <b>Risk mitigation strategy:</b>
+  <%= @asset_risk_mgt.Risk_Mitigation_Strategy %>
+</p>
+
+<p>
+  <b>Compensating controls:</b>
+  <%= @asset_risk_mgt.Compensating_Controls %>
+</p>
+
+<p>
+  <b>Risk residual score:</b>
+  <%= @asset_risk_mgt.Risk_Residual_Score %>
+</p>
+
+<p>
+  <b>Applicable risk exceptions:</b>
+  <%= @asset_risk_mgt.Applicable_Risk_Exceptions %>
+</p>
+
+<p>
+  <b>Risk review periodicity:</b>
+  <%= @asset_risk_mgt.Risk_Review_periodicity %>
+</p>
+
+      <%= link_to "Show Report", asset_risk_mgt_path(@asset_risk_mgt, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_asset_risk_mgt_path(@asset_risk_mgt) , :class => "pure-button pure-button-primary" %> 
+      <!--      <%= link_to 'Back', businessunits_path , :class => "pure-button pure-button-primary" %> -->
+
+      <%= link_to 'New RiskClassification', new_asset_risk_mgt_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>

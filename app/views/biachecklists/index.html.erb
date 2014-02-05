@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "layouts/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Check List</a></li>
+                        <!-- <li><a href="#EP" data-toggle="tab">Existing Checklist</a></li> -->
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+                            <table class="table table-bordered">
+                                <tr>
+                                <th>Divison department</th>
+                                <th>Activity</th>
+                                <!-- <th>Financial loss</th>
+                                <th>Reputation image</th>
+                                <th>Stakeholder impact</th>
+                                <th>Regulatory statutory</th>
+                                <th>Overall rating</th> -->
+                                <th>Comments</th>
+                                <!-- <th>Mao</th> -->
+                                <th>Person interviewed</th>
+                                <th>Facality</th>
+                                <th>Date</th>  
+                              </tr>
+
+                            <% @biachecklists.each do |biachecklist| %>
+                              <tr>
+                                <td><%= biachecklist.Divison_Department %></td>
+                                <!-- <td><%= biachecklist.activity %></td>
+                                <td><%= biachecklist.financial_loss %></td>
+                                <td><%= biachecklist.Reputation_image %></td>
+                                <td><%= biachecklist.Stakeholder_impact %></td>
+                                <td><%= biachecklist.Regulatory_Statutory %></td>
+                                <td><%= biachecklist.overall_rating %></td> -->
+                                <td><%= biachecklist.comments %></td>
+                               <!--  <td><%= biachecklist.mao %></td> -->
+                                <td><%= biachecklist.person_interviewed %></td>
+                                <td><%= biachecklist.facality %></td>
+                                <td><%= biachecklist.date %></td>
+                                <td><%= link_to 'Show', biachecklist %></td>
+                                <td><%= link_to 'Edit', edit_biachecklist_path(biachecklist) %></td>
+                                <td><%= link_to 'Destroy', biachecklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                              </tr>
+                            <% end %>
+                            </table>
+
+                            <br />
+                            <%= link_to 'Add New Checklist', new_biachecklist_path , :class => "pure-button pure-button-primary" %>
+                            </div>
+                         <div id="EP" class="tab-pane">
+                        <h4>Existing Checklist</h4>
+                        <p> Coming Soon ...</p>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

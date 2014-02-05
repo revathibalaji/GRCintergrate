@@ -1,0 +1,103 @@
+<div class="pure-u" id="menu">
+	<div class="pure-menu pure-menu-open">
+		<ul>
+			<li class="fancy">
+				<a href="main/index">
+					<i  class="icon-home"></i>					 
+					<span>Home</span>
+				</a>
+			</li>
+			
+			<li class="fancy">
+				<a href="/assetdashboard">
+					<i  class="icon-eye-open"></i>
+					<span>Dashboard</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/classifications">
+					<i  class="icon-building"></i>
+					<span >Asset Classification</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/labellings">
+					<i class="icon-group"></i>
+					<span >Asset Labeling</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/assets">
+					<i class="icon-file-text"></i>
+					<span >Asset Identification</span> 
+				</a>
+			</li>
+
+			<li>
+				<a href="/analyses">
+					<i  class="icon-file-text"></i>
+					<span >Data Asset Analysis</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/inventories">
+					<i class="icon-group"></i>
+					<span >Information Asset Inventory</span>
+				</a>
+			</li>
+
+			<!-- <li>
+				<a href="/calendar">
+					<i  class="icon-calendar"></i>
+					<span >Calendar</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i  class="icon-archive"></i>
+					<span >Archive</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i  class="icon-envelope"></i>
+					<span >Notification</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-trophy"></i>
+					<span>Test</span>
+				</a>
+			</li> -->
+			
+
+			<li>
+				<a href="#">
+					<i class= "icon-user"></i>
+					<% if user_signed_in? %>
+				<strong><%= current_user.email %></strong>
+				<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+				<% end %>
+				</a>
+			</li>
+
+			<li>
+				<% if user_signed_in? %>
+				<!-- Signed in as <%= current_user.email %>. Not you? -->
+				<%= link_to '<i class= "icon-signout"></i> <span>Sign Out</span>'.html_safe, destroy_user_session_path, :method => :delete %>
+				<% else %>
+                 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+				<% end %>
+			</li>
+		</ul>
+	</div>
+</div>

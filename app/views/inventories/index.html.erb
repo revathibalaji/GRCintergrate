@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "assetlayout/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Asset</a></li>
+                        <li><a href="#EP" data-toggle="tab">Existing Asset</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+                            <table class="table table-bordered">
+                                <tr>
+    <th>Operating Unit / function</th>
+    <th>Process name</th>
+    <th>Process owner</th>
+    <th>Asset name</th>    
+    <th>Classification</th>
+    <th>Integrity</th>
+    <th>Availability</th>    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inventories.each do |inventory| %>
+  <tr>
+    <td><%= inventory.op_function %></td>
+    <td><%= inventory.pro_name %></td>
+    <td><%= inventory.pro_owner %></td>
+    <td><%= inventory.asset_name %></td>    
+    <td><%= inventory.classification %></td>
+    <td><%= inventory.integrity %></td>
+    <td><%= inventory.availability %></td>    
+    <td><%= link_to 'Show', inventory %></td>
+    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+    <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+                        <br />
+                        <%= link_to 'New Inventory', new_inventory_path , :class => "pure-button pure-button-primary" %>
+                    </div>
+                    <div id="EP" class="tab-pane">
+                        <h4>Existing Asset</h4>
+                        <p> Coming Soon ...</p>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>
+

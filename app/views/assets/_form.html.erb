@@ -1,0 +1,140 @@
+<%= form_for(@asset) do |f| %>
+  <% if @asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+      <ul>
+      <% @asset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Asset 
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <%= f.label :name %><br />
+    <%= f.text_field :name %><br>
+              Give a name to the asset your program is intended to protect.
+            </div>
+            <div class="control-group">
+              <%= f.label :related_bus %><br />
+    <%= f.text_field :related_bus %><br>
+               Choose one (or many) BU that is related to this Asset
+            </div>
+            <div class="control-group">
+              <%= f.label :label %><br />                  
+              <%= f.collection_select :labelling_id , @labelling, :id ,:name %><br>
+              Choose a label from your asset label classification
+            </div>
+            <div class="control-group">
+              <%= f.label :type %><br />                  
+              <%= f.collection_select :classification_id , @classification, :id ,:a_type %><br>
+              This one is important. There's an obvious difference in between what data and an asset is. Data is an asset. An asset is not necesarily data. Examples: Credit Card Numbers, Invoices, Personal Information, Project Names, Etc are data (and potentially assets too). Windows servers, chairs, computers, etc are most likely assets for your program.
+            </div>  
+            <div class="control-group">
+              <%= f.label :liabilities %><br />    
+              <%= f.select :liabilities, [['',''],['Legal Constrains','Legal Constrains'],['Non-Legal Constrains','Non-Legal Constrains']] %><br> 
+              In the unlikely case of un-authorized disclosure or questionable integrity, confidentialiy or availability it might be that some liabilities might affect the asset. List the most significant (previously defined under Organization).
+            </div> 
+            <div class="control-group">
+              <%= f.label :owner %><br />
+              <%= f.select :owner, [['',''],['Compliance','Compliance'],['Finance','Finance'],['Fixorganization','Fixorganization'],['HR','HR']] %><br>
+              <%= f.select :guardian, [['',''],['Compliance','Compliance'],['Finance','Finance'],['Fixorganization','Fixorganization'],['HR','HR']] %><br>
+              <%= f.select :user, [['Everyone','Everyone'],['Compliance','Compliance'],['Finance','Finance'],['Fixorganization','Fixorganization'],['HR','HR']] %><br>
+    
+              Try to define, under which bussiness organizations the Owners, Guardians (On whom's responsability is the adequated availability of the asset) of the assets and Users.
+            </div> 
+            <div class="control-group">
+              <%= f.label :classification %><br />                 
+              <%= f.collection_select :classification_id , @classification, :id ,:c_type %><br>
+              Use the previously defined asset classification criterias and choose the appropiate classification profile for this asset.
+            </div> 
+            <div class="control-group">
+              <%= f.label :container %><br />
+              <%= f.select :container, [['',''],['Hardware','Hardware'],['Software','Software']] %><br>    
+              
+              Most assets are contained at some point in time within another asset. Example: Financial Data might be contained in another asset, called "Financial SpreadSheets".
+            </div>          
+          </div>
+        </div>
+      </div>
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+            Description
+          </a>
+        </div>
+        <div id="collapseTwo" class="accordion-body collapse">
+          <div class="accordion-inner">
+           
+            <div class="control-group">
+              
+              <%= f.label :description %><br />
+    
+              <%= f.text_area :description  , :rows => 5, :cols => 500 %><br> 
+              Description for an Asset.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            Document 
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+            </div>
+            <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attach %>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            Governance Risk and Compliance
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Governance Risk and Compliance</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            Approval , Review and  Distribution
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div>
+    <%= f.submit 'Create Asset', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', assets_path , :class => "pure-button pure-button-primary"%>
+  </div>
+  <% end %>
+</div>

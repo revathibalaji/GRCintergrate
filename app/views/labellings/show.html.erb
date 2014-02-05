@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+     <%= render :partial => "assetlayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+     <p>
+  <b>Name:</b>
+  <%= @labelling.name %>
+</p>
+
+<p>
+  <b>Criteria:</b>
+  <%= @labelling.criteria %>
+</p>
+
+
+      <%= link_to "Create PDF", labelling_path(@labelling, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_labelling_path(@labelling) , :class => "pure-button pure-button-primary" %> 
+      
+
+      <%= link_to 'New Asset Type', new_labelling_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "risklayout/menu" %>
+    </div>
+    <div id="content-wrap">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Classification type:</b>
+  <%= @risk_classification.Classification_Type %>
+</p>
+
+<p>
+  <b></b>
+  <%= @risk_classification.Classification_Type1 %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @risk_classification.Name %>
+</p>
+
+<p>
+  <b>Classification criteria:</b>
+  <%= @risk_classification.Classification_criteria %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @risk_classification.value %>
+</p>
+
+<%= link_to "Show Report", risk_classification_path(@risk_classification, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_risk_classification_path(@risk_classification) , :class => "pure-button pure-button-primary" %> 
+      <!--      <%= link_to 'Back', businessunits_path , :class => "pure-button pure-button-primary" %> -->
+
+      <%= link_to 'New RiskClassification', new_risk_classification_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>

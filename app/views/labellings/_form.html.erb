@@ -1,0 +1,41 @@
+<%= form_for(@labelling) do |f| %>
+  <% if @labelling.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@labelling.errors.count, "error") %> prohibited this labelling from being saved:</h2>
+
+      <ul>
+      <% @labelling.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+
+
+<div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="control-group">
+      <%= f.label :name %><br />
+    <%= f.text_field :name %><br>
+    You will need to create a name for your classification. Examples could be "Confidential", "Classified", etc. 
+    </div>
+    <div class="control-group">
+       <%= f.label :criteria %><br />
+    <%= f.text_field :criteria %><br>
+    Very important. It's crucial when classifying to be consistent with the criteria you use to say a given risk is one or another type. Ideally your criteria should be simple and practical. I wouldnt get too creative here.
+    </div>
+   
+    
+    
+    
+    
+    <div class="control-group">
+      <%= f.submit 'Create Label', :class => "pure-button pure-button-primary"%>
+      <%= link_to 'Cancel', labellings_path , :class => "pure-button pure-button-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

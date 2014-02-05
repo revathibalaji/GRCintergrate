@@ -1,0 +1,138 @@
+<html>
+<head>
+  <script>
+  $(function() {
+     $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+  });
+
+
+  </script>
+</head>
+<body>
+  <%= form_for(@crisis) do |f| %>
+  <% if @crisis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crisis.errors.count, "error") %> prohibited this crisis from being saved:</h2>
+
+      <ul>
+      <% @crisis.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Crisis
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :crisis_id %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary %>
+  </div>
+  <div class="field">
+    <%= f.label :Date_time_occured %><br />
+    <%= f.text_field :Datetime_occured, :id=> :datepicker%>
+  </div>
+  <div class="field">
+    <%= f.label :Details %><br />
+    <%= f.text_area :Details %>
+  </div>
+  <div class="field">
+    <%= f.label :crisis_status %><br />
+    <%= f.select :crisis_status, [[' ',' '],['On Process','On Process'],
+                 ['Rectified','Rectified']] %>
+  </div>
+  <div class="field">
+    <%= f.label :crisis_Category %><br />
+    <%= f.text_field :crisis_Category %>
+  </div>
+  <div class="field">
+    <%= f.label :crisis_test %><br />
+    <%= f.select :crisis_test, [[' ',' '],['Yes','Yes'],
+                 ['No','No']] %>
+  </div>
+  <div class="field">
+    <%= f.label :crisis_type %><br>
+    What type of crisis is this?<br />
+    <%= f.text_field :crisis_type %>
+  </div>
+  <div class="field">
+    <%= f.label :crisis_severity %><br>
+    What Types of Severity is this level?<br />
+    <%= f.select :crisis_severity, [[' ',' '],['Insignificant','Insignificant'],
+        ['Minor','Minor'],['Moderate','Moderate'],['Major','Major'],['Catastropic','Catastropic']] %>
+  </div>
+  </div>
+        </div>
+      </div>      
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            Document Control
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+              
+            </div>
+            <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attach %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            Governance Risk and Compliance
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Governance Risk and Compliance</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            Approval , Review and  Distribution
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+   <div class="actions">
+    <%= f.submit '+ Add New Crisis', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', crises_path , :class => "pure-button pure-button-primary"%>
+  </div>
+<% end %>
+</div>
+</body>
+</html>

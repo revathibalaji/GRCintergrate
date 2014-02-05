@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "assetlayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <b>Name:</b>
+  <%= @asset.name %>
+      </p>
+
+      <p>
+        <b>Related bus:</b>
+  <%= @asset.related_bus %>
+      </p>
+
+      <p>
+        <b>Label:</b>
+  <%= @asset.label %>
+      </p>
+
+      <p>
+        <b>Type:</b>
+  <%= @asset.type %>
+      </p>
+
+      <p>
+  <b>Liabilities:</b>
+  <%= @asset.liabilities %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @asset.owner %>
+</p>
+
+<p>
+  <b>Guardian:</b>
+  <%= @asset.guardian %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @asset.user %>
+</p>
+
+<p>
+  <b>Classification:</b>
+  <%= @asset.classification %>
+</p>
+
+<p>
+  <b>Container:</b>
+  <%= @asset.container %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @asset.description %>
+</p>
+
+      
+       <%= link_to "Create PDF", asset_path(@asset , :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+       <%= link_to 'Edit', edit_asset_path(@asset) , :class => "pure-button pure-button-primary"  %> 
+       <%= link_to 'New Asset', new_asset_path , :class => "pure-button pure-button-primary"  %>
+
+     </div>
+   </div>
+   <!--   <div id="footer">Footer</div> -->
+
+ </body>
+ </html>

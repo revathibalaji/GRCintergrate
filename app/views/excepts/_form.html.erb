@@ -1,0 +1,33 @@
+<%= form_for(@except) do |f| %>
+  <% if @except.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@except.errors.count, "error") %> prohibited this except from being saved:</h2>
+
+      <ul>
+      <% @except.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+   <div class="field">
+    <%= f.label :impact %><br />
+    <%= f.text_field :impact %>
+  </div>
+  <div class="control-group">
+
+              <%= f.label "Business Units" %>
+              <%= f.collection_select :policy_id , @policy, :id ,:p_name %>
+            </div>  
+  <%= f.submit 'Create Exception', :class =>  "pure-button pure-button-primary"%>
+  <%= link_to 'Cancel', policies_path , :class => "pure-button pure-button-primary"%>
+    <% end %>
+  </div>
+</div>

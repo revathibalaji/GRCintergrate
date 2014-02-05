@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "assetlayout/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Data Asset Analyses</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+
+                            <table class="table table-bordered">
+                              <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Status description</th>
+                                <th>Compensating controls</th>
+                            </tr>
+
+                            <% @analyses.each do |analysis| %>
+                            <tr>
+                                <td><%= analysis.name %></td>
+                                <td><%= analysis.description %></td>
+                                <td><%= analysis.status %></td>
+                                <td><%= analysis.status_description %></td>
+                                <td><%= analysis.compensating_controls %></td>
+                                <td><%= link_to 'Show', analysis %></td>
+                                <td><%= link_to 'Edit', edit_analysis_path(analysis) %></td>
+                                <td><%= link_to 'Destroy', analysis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            </tr>
+                            <% end %>
+                            </table>
+
+                        <br />
+
+                        <%= link_to 'New Analysis', new_analysis_path , :class => "pure-button pure-button-primary"  %>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>
+
+

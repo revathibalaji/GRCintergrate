@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "layouts/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Plan</a></li>
+                        <!-- <li><a href="#EP" data-toggle="tab">Existing Plans</a></li> -->
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+                            <table class="table table-bordered">
+                            <tr>
+                                <th>Plan title</th>
+                                <th>Plan objective</th>
+                                <!-- <th>Auditmetric</th>
+                                <th>Sucesscriteria</th>
+                                <th>Launchcriteria</th>
+                                <th>Sponsor</th> -->
+                                <th>Responsible</th>
+                                <!-- <th>Recoverable response</th> -->
+                                <th>Plan status</th>
+                               <!--  <th>Recoverableplantype</th>
+                                <th>Losstype</th>
+                                <th>Emergencyresponse</th> -->
+                                <th>Review Date</th>
+                              </tr>
+
+                            <% @plans.each do |plan| %>
+                              <tr>
+                                <td><%= plan.plan_title %></td>
+                                <td><%= plan.plan_objective %></td>
+                                <!-- <td><%= plan.auditmetric %></td>
+                                <td><%= plan.sucesscriteria %></td>
+                                <td><%= plan.launchcriteria %></td>
+                                <td><%= plan.sponsor %></td> -->
+                                <td><%= plan.responsible %></td>
+                                <!-- <td><%= plan.recoverableresponse %></td> -->
+                                <td><%= plan.planstatus %></td>
+                                <!-- <td><%= plan.recoverableplantype %></td>
+                                <td><%= plan.losstype %></td>
+                                <td><%= plan.emergencyresponse %></td> -->
+                                <td><%= plan.review %></td>
+                                <td><%= link_to 'Show', plan %></td>
+                                <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+                                <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                              </tr>
+                            <% end %>
+                            </table>
+                            <br />
+                                  <%= link_to '+ Add New Plan', new_plan_path , :class => "pure-button pure-button-primary" %>
+                            </div>
+                         <div id="EP" class="tab-pane">
+                        <h4>Existing Plans</h4>
+                        <p> Coming Soon ...</p>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

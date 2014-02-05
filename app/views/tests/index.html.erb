@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "layouts/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Training & Test</a></li>
+                  <!--       <li><a href="#EP" data-toggle="tab">Existing Training & Test</a></li> -->
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+                            <table class="table table-bordered">
+                              <tr>
+                                <th>Training name</th>
+                                <th>Training date</th>
+                                <th>Next Training date</th>
+                                <!-- <th>Training plan feedback</th> -->
+                                <th>Test date</th>
+                                <!-- <th>Test type</th> -->
+                                <th>Test responsible</th>
+                                <!-- <th>Test feedback</th> -->
+                                <th>Test status</th>
+                              </tr>
+
+                            <% @tests.each do |test| %>
+                              <tr>
+                                <td><%= test.training_name %></td>
+                                <td><%= test.training_date %></td>
+                                <td><%= test.nexttraining_date %></td>
+                                <!-- <td><%= test.trainingplan_feedback %></td> -->
+                                <td><%= test.test_date %></td>
+                                <!-- <td><%= test.test_type %></td> -->
+                                <td><%= test.test_responsible %></td>
+                                <!-- <td><%= test.test_feedback %></td> -->
+                                <td><%= test.test_status %></td>
+                                <td><%= link_to 'Show', test %></td>
+                                <td><%= link_to 'Edit', edit_test_path(test) %></td>
+                                <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                              </tr>
+                            <% end %>
+                            </table>
+                             <br />
+                             <%= link_to '+ Add New Training', new_test_path , :class => "pure-button pure-button-primary" %>
+                            </div>
+                         <div id="EP" class="tab-pane">
+                        <h4>Existing Training & Test</h4>
+                        <p> Coming Soon ...</p>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

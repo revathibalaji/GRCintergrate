@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  crisis_id: MyString
+  summary: MyString
+  Datetime_occured: MyString
+  Details: MyString
+  crisis_status: MyString
+  crisis_Category: MyString
+  crisis_test: MyString
+  crisis_type: MyString
+  crisis_severity: MyString
+
+two:
+  crisis_id: MyString
+  summary: MyString
+  Datetime_occured: MyString
+  Details: MyString
+  crisis_status: MyString
+  crisis_Category: MyString
+  crisis_test: MyString
+  crisis_type: MyString
+  crisis_severity: MyString

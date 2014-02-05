@@ -1,0 +1,92 @@
+<%= form_for(@third_party_risk_mgt) do |f| %>
+  <% if @third_party_risk_mgt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@third_party_risk_mgt.errors.count, "error") %> prohibited this third_party_risk_mgt from being saved:</h2>
+
+      <ul>
+      <% @third_party_risk_mgt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="control-group">
+    <%= f.label :Risk_Title %><br />
+    <%= f.text_field :Risk_Title %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Applicable_Third_Parties %><br />
+    <%= f.select :Applicable_Third_Parties ,[["select some options...","select some options..."],["Custormer","Custormer"]]  %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Applicable_Assets %><br />
+    <%= f.text_field :Applicable_Assets %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Why_are_assets_shared_with_this_TP %><br />
+    <%= f.text_field :Why_are_assets_shared_with_this_TP %>
+  </div>
+  <div class="control-group">
+    <%= f.label :How_it_will_be_controled %><br />
+    <%= f.text_field :How_it_will_be_controled %>
+  </div>
+ <div class="control-group">
+    <%= f.label :Threats %><br />
+    <%= f.text_field :Threats %>
+  </div>
+   <div class="control-group">
+     <%= f.select :Threats1 ,[["select some options...","select some options..."],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"],["competitors-mudslinging","competitors-mudslinging"],["competitors-copyright infringment","competitors-copyright infringment"],["competitors-intellectual Property Theft","competitors-intellectual Property Theft"],["competitors-industrial espionage","competitors-industrial espionage"],["competitors-Price Survelliance","competitors-Price Survelliance"],["criminals- cyberstalking", "criminals - cyberstalking"],["criminals-sale of stolen information ", "criminals-sale of stolen information "],["criminals- Assault", "criminals - Assault"],["criminals- Kidnapping", "criminals - Kidnapping"],["criminals- Bribery", "criminals - Bribery"],["criminals- Extortion", "criminals - Extortion"],["criminals- Fraud", "criminals - Fraud"],["criminals- Theft", "criminals - Theft"],["Criminals - Physical infrastructure attacks","Criminals - Physical infrastructure attacks"],["Criminals - Information blackmail","Criminals - Information blackmail"],["Current and Past Employees - Theft","Current and Past Employees - Theft"],["Current and Past Employees - Scandals","Current and Past Employees - Scandals"],["Current and Past Employees - Lawsuits against employer","Current and Past Employees - Lawsuits against employer"],["Current and Past Employees - Insurance fraud","Current and Past Employees - Insurance fraud"],["Current and Past Employees - Workplace revenge","Current and Past Employees - Workplace revenge"],["Current and Past Employees - Passive�aggressive behaviour","Current and Past Employees - Passive�aggressive behaviour"],["Current and Past Employees - Negligence","Current and Past Employees - Negligence"],["Current and Past Employees - Human error","Current and Past Employees - Human error"],["Current and Past Employees - Sabotage","Current and Past Employees - Sabotage"],["Current and Past Employees - Tampering","Current and Past Employees - Tampering"],["Current and Past Employees - Vandalism","Current and Past Employees - Vandalism"],["Current and Past Employees - Unions","Current and Past Employees - Unions"],["Current and Past Employees - Pandemics and disease","Current and Past Employees - Pandemics and disease"],["Current and Past Employees - Insider trading","Current and Past Employees - Insider trading"],["Current and Past Employees - Fraud","Current and Past Employees - Fraud"],["Current and Past Employees - Professional misconduct","Current and Past Employees - Professional misconduct"],["Current and Past Employees - Sexual harassment","Current and Past Employees - Sexual harassment"],["Current and Past Employees - Workplace bullying","Current and Past Employees - Workplace bullying"],["Current and Past Employees - Discriminatory abuse","Current and Past Employees - Discriminatory abuse"],["Current and Past Employees - Liability for employee actions","Current and Past Employees - Liability for employee actions"],["Governments - Electromagnetic weapons","Governments - Electromagnetic weapons"],["Governments - Cyberwarfare","Governments - Cyberwarfare"],["Governments - Terrorism","Governments - Terrorism"],["Governments - Espionage","Governments - Espionage"],["Governments - Computer warfare","Governments - Computer warfare"],["Governments - Biological warfare","Governments - Biological warfare"],["Governments - Chemical warfare","Governments - Chemical warfare"],["Governments - Acts of war","Governments - Acts of war"],["Governments - Nuclear war","Governments - Nuclear war"],["Governments - Wiretapping","Governments - Wiretapping"],["Hacking - Viruses","Hacking - Viruses"],["Hacking - System tampering","Hacking - System tampering"],["Hacking - Worms","Hacking - Worms"],["Hacking - Cracks","Hacking - Cracks"],["Hacking - Trojan","Hacking - Trojan"],["Hacking - DNS Poisoning","Hacking - DNS Poisoning"],["Hacking - Man-in-the-middle spoofing","Hacking - Man-in-the-middle spoofing"],["Hacking - Social engineering","Hacking - Social engineering"],["Hacking - IP Spoofing","Hacking - IP Spoofing"],["Hacking - Replay Attacks","Hacking - Replay Attacks"],["Hacking - TCP/IP hijacking","Hacking - TCP/IP hijacking"],["Hacking - Website defacement","Hacking - Website defacement"],["Hacking - Eavesdropping","Hacking - Eavesdropping"],["Hacking - System penetration","Hacking - System penetration"],["Hacking - Spam","Hacking - Spam"],["Hacking - Phishing","Hacking - Phishing"],["Hacking - Spyware","Hacking - Spyware"],["Hacking - Malware","Hacking - Malware"],["Hacking - Tunnelling","Hacking - Tunnelling"],["Hacking - Back door/trap door","Hacking - Back door/trap door"],["Hacking - Network sniffing","Hacking - Network sniffing"],["Hacking - Password Cracking","Hacking - Password Cracking"],["Litigants - Seeking confidential data as evidence","Litigants - Seeking confidential data as evidence"],["Nature and Accidents - Landslides","Nature and Accidents - Landslides"],["Nature and Accidents - Volcanoes","Nature and Accidents - Volcanoes"],["Nature and Accidents - Fires","Nature and Accidents - Fires"],["Nature and Accidents - Storms and floods","Nature and Accidents - Storms and floods"],["Nature and Accidents - Transportation accidents","Nature and Accidents - Transportation accidents"],["Nature and Accidents - Hazardous materials related events","Nature and Accidents - Hazardous materials related events"],["Nature and Accidents - Solar flares","Nature and Accidents - Solar flares"],["Nature and Accidents - Earthquakes","Nature and Accidents - Earthquakes"],["The Press - Exposing trade secrets","The Press - Exposing trade secrets"],["The Press - Exposing strategy and new products","The Press - Exposing strategy and new products"],["The Press - Bad publicity ","The Press - Bad publicity "]]  %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Vulnerabilities %><br />
+    <%= f.text_field :Vulnerabilities %>
+  </div>
+  <div class="control-group">
+   <br /> <%= f.text_field :Vulnerabilities1%>
+  </div>
+  <div class="control-group">
+    <%= f.label :Risk_Classification %><br />
+    <%= f.text_field :Risk_Classification %>
+  </div>
+  <div class="control-group">
+    <br /><%= f.text_field :Risk_Classification1 %>
+  </div>
+  <div class="control-group">
+    <br /><%= f.text_field :Risk_Classification2 %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Risk_Score %><br />
+    <%= f.number_field :Risk_Score %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Risk_Mitigation_Strategy %><br />
+     <%= f.select :Compensating_Controls ,[["select some options...","select some options..."],["Accept","Accept"],["Avoid","Avoid"],["Mitigate","Mitigate"],["Transfer","Transfer"]]  %>
+  </div>
+ <div class="control-group">
+    <%= f.label :Compensating_Controls %><br />
+    <br /><%= f.text_field :Risk_Classification2 %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Risk_Residual_Score %><br />
+    <%= f.number_field :Risk_Residual_Score %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Applicable_Risk_Exceptions %><br />
+    <br /><%= f.text_field :Risk_Classification2 %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Risk_Review_Periodicity %><br />
+    <%= f.date_select :Risk_Review_Periodicity %>
+  </div>
+   <div class="control-group">
+      <%= f.submit 'Create Thirdparty', :class => "pure-button pure-button-primary"%>
+      <%= link_to 'Cancel', third_party_risk_mgts_path , :class => "pure-button pure-button-primary" %>
+  </div>
+<% end %>
+
+</div>
+</div>

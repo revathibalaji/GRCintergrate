@@ -1,0 +1,79 @@
+<%= form_for(@asset_risk_mgt) do |f| %>
+  <% if @asset_risk_mgt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asset_risk_mgt.errors.count, "error") %> prohibited this asset_risk_mgt from being saved:</h2>
+
+      <ul>
+      <% @asset_risk_mgt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="control-group">
+      <%= f.label :Risk_Title %><br />
+    <%= f.text_field :Risk_Title %>
+    </div>
+    <div class="control-group">
+      <%= f.label :Applicable_Assets %><br />
+    <%= f.select :Applicable_Assets,[["",""],["select some options...","select some options..."],["Hardware","Hardware"],["Software","Software"]]  %>
+    </div>
+    <div class="control-group">
+      <%= f.label :Threats %><br />
+    <%= f.text_area :Threats %><br /><br />
+    <%= f.select :Threats1 ,[["select some options...","select some options..."],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"],["competitors-mudslinging","competitors-mudslinging"],["competitors-copyright infringment","competitors-copyright infringment"],["competitors-intellectual Property Theft","competitors-intellectual Property Theft"],["competitors-industrial espionage","competitors-industrial espionage"],["competitors-Price Survelliance","competitors-Price Survelliance"],["criminals- cyberstalking", "criminals - cyberstalking"],["criminals-sale of stolen information ", "criminals-sale of stolen information "],["criminals- Assault", "criminals - Assault"],["criminals- Kidnapping", "criminals - Kidnapping"],["criminals- Bribery", "criminals - Bribery"],["criminals- Extortion", "criminals - Extortion"],["criminals- Fraud", "criminals - Fraud"],["criminals- Theft", "criminals - Theft"]]  %>
+    </div>
+    <div class="control-group">
+      <%= f.label :Vulnerabilities %><br />
+    <%= f.text_field :Vulnerabilities %><br />
+    </div>
+    <div class="control-group">
+    <%= f.select :Vulnerabilities1 ,[["",""],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"]]  %>
+    </div>
+    <div class="control-group">
+       <%= f.label :Risk_Classification %><br />
+    <%= f.text_field :Risk_Classification %>
+    </div>
+    <div class="control-group">
+    <%= f.text_field :Risk_Classification1 %>
+    </div>
+    <div class="control-group">
+    <%= f.text_field :Risk_Classification2 %>
+    </div>
+    <div class="control-group">
+      <%= f.label :Risk_Score %><br />
+    <%= f.number_field :Risk_Score %>
+    </div>
+<div class="control-group">
+      <%= f.label :Risk_Mitigation_Strategy %><br />
+    <%= f.text_field :Risk_Mitigation_Strategy %>
+    </div>
+<div class="control-group">
+      <%= f.label :Compensating_Controls %><br />
+    <%= f.select :Compensating_Controls ,[["select some options...","select some options..."],["Sample Service","Sample Service"]]  %>
+    </div>
+<div class="control-group">
+      <%= f.label :Risk_Residual_Score %><br />
+    <%= f.number_field :Risk_Residual_Score %>
+    </div>
+<div class="control-group">
+       <%= f.label :Applicable_Risk_Exceptions %><br />
+    <%= f.text_field :Applicable_Risk_Exceptions %>
+    </div>
+<div class="control-group">
+     <%= f.label :Risk_Review_periodicity %><br />
+    <%= f.date_select :Risk_Review_periodicity %>
+    </div>
+
+<div class="control-group">
+      <%= f.submit 'Create AssetRiskMgt', :class => "pure-button pure-button-primary"%>
+      <%= link_to 'Cancel', asset_risk_mgts_path , :class => "pure-button pure-button-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

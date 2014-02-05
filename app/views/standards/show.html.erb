@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "policylayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+  <b>Title:</b>
+  <%= @standard.title %>
+</p>
+
+      <p>
+  <b>Scope:</b>
+  <%= @standard.scope %>
+</p>
+
+      <p>
+  <b>Description:</b>
+  <%= @standard.description %>
+</p>
+
+
+      <p>
+  <b>Startdate:</b>
+  <%= @standard.startdate %>
+</p>
+
+
+      <p>
+  <b>Enddate:</b>
+  <%= @standard.enddate %>
+</p>
+
+      <%= link_to 'Edit', edit_standard_path(@standard) %> |
+<%= link_to 'Back', standards_path %>
+
+    </l>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>
+

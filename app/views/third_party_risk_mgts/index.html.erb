@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "risklayout/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#third_party_risk_mgts" data-toggle="tab">Third Party</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+<h1>Listing Third Party Risk Mgts</h1>
+<table class="table table-bordered">
+  <tr>
+    <th>Risk title</th>
+    <th>Applicable third parties</th>
+    <th>Applicable_Assets</th>
+    <th>Why_are_assets_shared_with_this_TP</th>
+    <th>How_it_will_be_controled</th>
+    <th>Threats</th>
+    <th></th>
+    <th>Vulnerabilities</th>
+    <th></th>
+    <th>Risk_Classification</th>
+    <th></th>
+    <th></th>
+    <th>Risk_Score</th>
+    <th>Risk_Mitigation_Strategy</th>
+    <th>Compensating_Controls</th>
+    <th>Risk_Residual_Score</th>
+    <th>Applicable_Risk_Exceptions</th>
+    <th>Risk_Review_Periodicity</th>
+  </tr>
+
+<% @third_party_risk_mgts.each do |third_party_risk_mgt| %>
+  <tr>
+    <td><%= third_party_risk_mgt.Risk_Title %></td>
+    <td><%= third_party_risk_mgt.Applicable_Third_Parties %></td>
+    <td><%= third_party_risk_mgt.Applicable_Assets %></td>
+    <td><%= third_party_risk_mgt.Why_are_assets_shared_with_this_TP %></td>
+    <td><%= third_party_risk_mgt.How_it_will_be_controled %></td>
+    <td><%= third_party_risk_mgt.Threats %></td>
+    <td><%= third_party_risk_mgt.Threats1 %></td>
+    <td><%= third_party_risk_mgt.Vulnerabilities %></td>
+    <td><%= third_party_risk_mgt.Vulnerabilities1 %></td>
+    <td><%= third_party_risk_mgt.Risk_Classification %></td>
+    <td><%= third_party_risk_mgt.Risk_Classification1 %></td>
+    <td><%= third_party_risk_mgt.Risk_Classification2 %></td>
+    <td><%= third_party_risk_mgt.Risk_Score %></td>
+    <td><%= third_party_risk_mgt.Risk_Mitigation_Strategy %></td>
+    <td><%= third_party_risk_mgt.Compensating_Controls %></td>
+    <td><%= third_party_risk_mgt.Risk_Residual_Score %></td>
+    <td><%= third_party_risk_mgt.Applicable_Risk_Exceptions %></td>
+    <td><%= third_party_risk_mgt.Risk_Review_Periodicity %></td>  
+    <td><%= link_to 'Show', third_party_risk_mgt %></td>
+    <td><%= link_to 'Edit', edit_third_party_risk_mgt_path(third_party_risk_mgt) %></td>
+    <td><%= link_to 'Destroy', third_party_risk_mgt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Third party risk mgt', new_third_party_risk_mgt_path , :class => "pure-button pure-button-primary"  %>
+</div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

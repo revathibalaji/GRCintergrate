@@ -1,0 +1,48 @@
+<%= form_for(@analysis) do |f| %>
+  <% if @analysis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@analysis.errors.count, "error") %> prohibited this analysis from being saved:</h2>
+
+      <ul>
+      <% @analysis.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="control-group">
+       <%= f.label :name %><br />
+    <%= f.text_field :name %><br>
+    This is the name of the asset being analysed.
+    </div>
+    <div class="control-group">
+      <%= f.label :description %><br />
+    <%= f.text_field :description %><br>
+    This is the description of the asset being analysed..
+    </div>
+    <div class="control-group">
+      <%= f.label :status %><br />
+    <%= f.text_field :status %><br>
+    Choose the status being analysed..
+    </div>
+    <div class="control-group">
+      <%= f.label :status_description %><br />
+    <%= f.text_field :status_description %><br>
+    Describe a bit more the status you have previously selected...
+    </div>
+    <div class="control-group">
+      <%= f.label :compensating_controls %><br />
+    <%= f.text_field :compensating_controls %><br>
+     Choose the most suitable available compensating controls (you can select multiple) or NONE if you have nothing suitable
+    </div>    
+    <div class="control-group">
+      <%= f.submit 'Create Analyses', :class => "pure-button pure-button-primary"%>
+      <%= link_to 'Cancel', businessunits_path , :class => "pure-button pure-button-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

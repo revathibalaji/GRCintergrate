@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title></title>
+    <%= javascript_include_tag "/js/highcharts.js", "chartkick" %>
+    <script type="text/javascript" src ="js/themes/grid.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div><center><img src="/images/fixnix.png"></center></div>
+    </div>
+    
+     <i class= "icon-user"></i>
+      <% if user_signed_in? %>
+      <strong>Signed in as <%= current_user.email %></strong>&nbsp;
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>     
+      <%= link_to '<span>Sign Out</span>'.html_safe, destroy_user_session_path,
+       :method => :delete %>
+       <% else %>
+       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+            
+     <br><br><br><br>
+    <div id="main-wrap">
+        <div class="container">
+        
+        <br>
+        <table>
+          <tr>
+            <td>
+            <div class="menu">
+                <div>
+                  <br>
+                   <center><a href="/dashboards"><img src="/images/bcm.png" ></img>
+                <br>Business Continuity Management</u></a></center>
+                </div>
+             </div>
+            </td>
+          <td>
+            <div class="menu">
+                <div>
+                  <br>
+                    <center><a href="/auditdashboard"><img src="/images/audit.png"></img>
+                <br>Audit Management</a></center>
+                </div>
+            </div>
+          </td>
+          <td>
+            <div class="menu">
+                <div>
+                  <br>
+                    <center><a href="/assetdashboard"><img src="/images/asset.png"></img>
+                <br>Asset Management</a></center>
+                </div>
+            </div>
+            </td>
+            </tr>
+            </table>
+            <br><br><br>
+            <table>
+            <tr>
+            <td>
+            <div class="menu">
+                <div>
+                  <br>
+                     <center><a href="/riskdashboard"><img src="/images/risk.png"></img>
+                <br>Risk Management</a></center>
+                </div>
+            </div>
+            </td>
+            <td>
+            <div class="menu">
+                <div>
+                  <br>
+                     <center><a href="/policydashboard"><img src="/images/policy.jpg" width="75" height="65"></img>
+                <br>Policy Management</a></center>
+                </div>
+            </div>
+            </td>
+           
+            </tr>
+       </table>
+       </div>
+     </div>
+   
+
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

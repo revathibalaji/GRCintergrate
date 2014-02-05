@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  training_name: MyString
+  training_date: MyString
+  nexttraining_date: MyString
+  trainingplan_feedback: MyString
+  test_date: MyString
+  test_type: MyString
+  test_responsible: MyString
+  test_feedback: MyString
+  test_status: MyString
+
+two:
+  training_name: MyString
+  training_date: MyString
+  nexttraining_date: MyString
+  trainingplan_feedback: MyString
+  test_date: MyString
+  test_type: MyString
+  test_responsible: MyString
+  test_feedback: MyString
+  test_status: MyString

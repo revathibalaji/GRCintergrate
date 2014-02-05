@@ -1,0 +1,163 @@
+<html>
+<head>
+  <script>
+  $(function() {
+     $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+</head>
+<body>
+  <%= form_for(@biachecklist) do |f| %>
+  <% if @biachecklist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@biachecklist.errors.count, "error") %> prohibited this biachecklist from being saved:</h2>
+
+      <ul>
+      <% @biachecklist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Check list
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+  <div class="field">
+    <%= f.label :Divison_Department %><br />
+    <%= f.text_field :Divison_Department %>
+  </div>
+  <div class="field">
+    <%= f.label :activity %><br />
+    <%= f.text_field :activity %>
+  </div>
+  <div class="field">
+    <%= f.label :financial_loss %>
+    Could interruption of services lead to financial loss (such as revenues, interest costs, penalties and extra cost of working)?<br>
+    <%= f.radio_button :financial_loss, '1 day' %><%= f.label '1 day' %>
+    <%= f.radio_button :financial_loss, '3 days' %><%= f.label '3 days' %>
+    <%= f.radio_button :financial_loss, '5 days' %><%= f.label '5 days' %>
+    <%= f.radio_button :financial_loss, '10 days' %><%= f.label '10 days' %>
+  </div>
+  <div class="field">
+    <%= f.label :Reputation_image %>
+    Could interruption of services lead to a loss of public confidence, negative publicity and/or damage the image and reputation of the college?<br>
+    <%= f.radio_button :Reputation_image, '1 day' %><%= f.label '1 day' %>
+    <%= f.radio_button :Reputation_image, '3 days' %><%= f.label '3 days' %>
+    <%= f.radio_button :Reputation_image, '5 days' %><%= f.label '5 days' %>
+    <%= f.radio_button :Reputation_image, '10 days' %><%= f.label '10 days' %>
+  </div>
+  <div class="field">
+    <%= f.label :Stakeholder_impact %>
+    Could interruption of services suspend or restrict expectations of stakeholders?<br>
+    <%= f.radio_button :Stakeholder_impact, '1 day' %><%= f.label '1 day' %>
+    <%= f.radio_button :Stakeholder_impact, '3 days' %><%= f.label '3 days' %>
+    <%= f.radio_button :Stakeholder_impact, '5 days' %><%= f.label '5 days' %>
+    <%= f.radio_button :Stakeholder_impact, '10 days' %><%= f.label '10 days' %>
+  </div>
+  <div class="field">
+    <%= f.label :Regulatory_Statutory %>
+    Could interruption of services breach statutes/regulations?<br>
+    <%= f.radio_button :Regulatory_Statutory, '1 day' %><%= f.label '1 day' %>
+    <%= f.radio_button :Regulatory_Statutory, '3 days' %><%= f.label '3 days' %>
+    <%= f.radio_button :Regulatory_Statutory, '5 days' %><%= f.label '5 days' %>
+    <%= f.radio_button :Regulatory_Statutory, '10 days' %><%= f.label '10 days' %>
+  </div>
+  <div class="field">
+    <b><%= f.label :overall_rating %></b>
+    Based on the above impacts, provide an overall impact rating for this process / activity?<br>
+    <%= f.radio_button :overall_rating, '1 day' %><%= f.label '1 day' %>
+    <%= f.radio_button :overall_rating, '3 days' %><%= f.label '3 days' %>
+    <%= f.radio_button :overall_rating, '5 days' %><%= f.label '5 days' %>
+    <%= f.radio_button :overall_rating, '10 days' %><%= f.label '10 days' %>
+
+  </div>
+  
+  </div>
+  </div>
+ </div>  
+
+ <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            Checked By
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :Maximum_Acceptable_Outage %><br />
+    <%= f.text_field :mao %>
+  </div>
+  <div class="field">
+    <%= f.label :person_interviewed %><br />
+    <%= f.text_field :person_interviewed %>
+  </div>
+  <div class="field">
+    <%= f.label :facality %><br />
+    <%= f.text_field :facality %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date, :id=> :datepicker %>
+  </div>
+          </div>
+        </div>
+      </div>    
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            Document Control
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+              
+            </div>
+            <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attach %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            Approval , Review and  Distribution
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="actions">
+    <%= f.submit '+ Add New Checklist', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', biachecklists_path , :class => "pure-button pure-button-primary"%>
+  </div>
+<% end %>
+</div>
+</body>
+</html>

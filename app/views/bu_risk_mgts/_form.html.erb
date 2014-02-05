@@ -1,0 +1,76 @@
+<%= form_for(@bu_risk_mgt) do |f| %>
+  <% if @bu_risk_mgt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bu_risk_mgt.errors.count, "error") %> prohibited this bu_risk_mgt from being saved:</h2>
+
+      <ul>
+      <% @bu_risk_mgt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Risk_Title %><br />
+    <%= f.text_field :Risk_Title %>
+  </div>
+  <div class="field">
+    <%= f.label :Applicable_Business_Units %><br />
+    <%= f.select :Applicable_Business_Units ,[["",""],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"]]  %>
+  </div>
+  <div class="field">
+    <%= f.label :What_is_the_business_impact_if_this_threats_materializes? %><br />
+    <%= f.text_field :What_is_the_business_impact_if_this_threats_materializes? %>
+  </div>
+  <div class="field">
+    <%= f.label :Threats %><br />
+    <%= f.text_field :Threats %>
+  </div>
+  <div class="field">
+    <%= f.label :Vulnerabilities %><br />
+    <%= f.text_field :Vulnerabilities %>
+  </div>
+  <div class="field">
+    <%= f.label :Risk_Classification %><br />
+    <%= f.text_field :Risk_Classification %>
+  </div>
+  <div class="field">
+    <br />
+    <%= f.text_field :Risk_Classification1 %>
+  </div>
+  <div class="field">
+    <br />
+    <%= f.text_field :Risk_Classification2 %>
+  </div>
+  <div class="field">
+    <%= f.label :Risk_score %><br />
+    <%= f.number_field :Risk_score %>
+  </div>
+  <div class="field">
+    <%= f.label :Risk_Mitigation_Strategy %><br />
+    <%= f.select :Risk_Mitigation_Strategy ,[["",""],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"]]  %>
+  </div>
+  <div class="field">
+    <%= f.label :Compensating_Continuity_Plans %><br />
+    <%= f.select :Compensating_Continuity_Plans ,[["",""],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"]]  %>
+  </div>
+  <div class="field">
+    <%= f.label :Risk_Residual_Score %><br />
+    <%= f.number_field :Risk_Residual_Score %>
+  </div>
+  <div class="field">
+    <%= f.label :Applicable_Risk_Exceptions %><br />
+    <%= f.select :Applicable_Risk_Exceptions ,[["",""],["competitors-compititive research","competitors-compititive research"],["competitors-patent infringment","competitors-patent infringment"],["competitors-dirty tricks","competitors-dirty tricks"],["competitors-illegal infiltration","competitors-illegal infiltration"]]  %>
+  </div>
+  <div class="field">
+    <%= f.label :Risk_Review_periodicity %><br />
+    <%= f.date_select :Risk_Review_periodicity %>
+  </div>
+<div class="control-group">
+      <%= f.submit 'Create BURiskMgt', :class => "pure-button pure-button-primary"%>
+      <%= link_to 'Cancel', bu_risk_mgts_path , :class => "pure-button pure-button-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

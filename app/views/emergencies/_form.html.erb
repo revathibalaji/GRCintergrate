@@ -1,0 +1,141 @@
+<html>
+<head>
+  <script>
+  $(function() {
+     $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+</head>
+<body>
+  <%= form_for(@emergency) do |f| %>
+  <% if @emergency.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@emergency.errors.count, "error") %> prohibited this emergency from being saved:</h2>
+
+      <ul>
+      <% @emergency.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Contact
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+            <div class="field">
+              <%= f.label :location %><br />
+              <%= f.text_field :location %>
+            </div>
+            <div class="field">
+              <%= f.label :police_station %><br />
+              <%= f.text_field :police %>
+            </div>
+            <div class="field">
+              <%= f.label :fire_station %><br />
+              <%= f.text_field :fire %>
+            </div>
+            <div class="field">
+              <%= f.label :ambulance %><br />
+              <%= f.text_field :ambulance %>
+            </div>
+            <div class="field">
+              <%= f.label :hospital %><br />
+              <%= f.text_field :hospital %>
+            </div>
+            <div class="field">
+              <%= f.label :insurance %><br />
+              <%= f.text_field :insurance %>
+            </div>
+            <div class="field">
+              <%= f.label :telephone %><br />
+              <%= f.text_field :telephone %>
+            </div>
+            <div class="field">
+              <%= f.label :gas_or_heat_Dept %><br />
+              <%= f.text_field :gas_heat %>
+            </div>
+            <div class="field">
+              <%= f.label :electric_dept %><br />
+              <%= f.text_field :electric %>
+            </div>
+            <div class="field">
+              <%= f.label :newspaper %><br />
+              <%= f.text_field :newspaper %>
+            </div>
+            <div class="field">
+              <%= f.label :radio_channel %><br />
+              <%= f.text_field :radio %>
+            </div>
+            <div class="field">
+              <%= f.label :tvchannel %><br />
+              <%= f.text_field :tvchannel %>
+            </div>
+            </div>
+            </div>
+           </div>  
+      <!-- <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            Document Control
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+              
+            </div>
+            <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attach %>
+            </div>
+          </div>
+        </div>
+      </div> -->
+     <!--  <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            Governance Risk and Compliance
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Governance Risk and Compliance</p>
+          </div>
+        </div>
+      </div> -->
+   <!--    <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            Approval , Review and  Distribution
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit '+ Add New Emergency contact', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', emergencies_path , :class => "pure-button pure-button-primary"%>
+  </div>
+<% end %>
+</div>
+</body>
+</html>

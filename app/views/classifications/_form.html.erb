@@ -1,0 +1,48 @@
+<%= form_for(@classification) do |f| %>
+  <% if @classification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@classification.errors.count, "error") %> prohibited this classification from being saved:</h2>
+
+      <ul>
+      <% @classification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="control-group">
+      <%= f.label 'Classification type'%><br />
+    <%= f.text_field :c_type %><br>
+      name a new type
+    </div>
+    <div class="control-group">
+      <%= f.label :name %><br />
+    <%= f.text_field :name %><br>
+      You will need to create a name for your classification. Examples could be "High", "Low", etc.
+    </div>
+    <div class="control-group">
+      <%= f.label :type %><br />
+    <%= f.text_field :a_type %><br>
+      Type of an asset. Examples: "Hardware, Software, Etc"
+    </div>
+    <div class="control-group">
+      <%= f.label :criteria %><br />
+    <%= f.text_field :criteria %><br>
+      Very important. It's crucial when classifying to be consistent with the criteria you use to say a given asset is one or another type. Ideally your criteria should be simple and practical. Dont get too creative here. Examples: "The asset worth is higher than a 40k EUR", "The disclosure of this asset could mean legal actions against the company", Etc.
+    </div>
+    <div class="control-group">
+      <%= f.label :value %><br />
+    <%= f.number_field :value %><br>
+      At a later stage of your classification (and Risk Management) this will be useful to give numerical priorities to each classificatoin type, Etc. Values represent the significant of this classification. Examples could be 3, 5, 1, Etc. Note: dont use 0! Default if not completed is 1.
+    </div>    
+    <div class="control-group">
+      <%= f.submit 'Create Asset Type', :class => "pure-button pure-button-primary"%>
+      <%= link_to 'Cancel', classifications_path , :class => "pure-button pure-button-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+

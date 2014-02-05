@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "risklayout/menu" %>
+    </div>
+    <div id="content-wrap">
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Risk exception title:</b>
+  <%= @risk_exception.Risk_Exception_Title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @risk_exception.Description %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @risk_exception.Author %>
+</p>
+
+<p>
+  <b>Expiration:</b>
+  <%= @risk_exception.Expiration %>
+</p>
+
+
+<%= link_to 'Edit', edit_risk_exception_path(@risk_exception) %> |
+<%= link_to 'Back', risk_exceptions_path %>
+
+
+<%= link_to "Show Report", risk_exception_path(@risk_exception, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_risk_exception_path(@risk_exception) , :class => "pure-button pure-button-primary" %> 
+      <!--      <%= link_to 'Back', businessunits_path , :class => "pure-button pure-button-primary" %> -->
+
+      <%= link_to 'New RiskClassification', new_risk_exception_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>

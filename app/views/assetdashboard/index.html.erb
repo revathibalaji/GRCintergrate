@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title></title>
+    <%= javascript_include_tag "/js/highcharts.js", "chartkick" %>
+    <script type="text/javascript" src ="js/themes/grid.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "assetlayout/menu" %>
+        </div>
+        <div id="content-wrap" class="dashboard">
+            <div class="chart">
+                <div>
+                    <p>Asset</p>
+                    <%= pie_chart Asset.group("name").count %>
+                </div>
+                <div>
+                    <p>Asset Type</p>
+                    <%= pie_chart Classification.group("a_type").count %>
+                </div>
+                <div>
+                    <p>Information Asset Inventory</p>
+                    <%= pie_chart Inventory.group("op_function").count %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>
+
+

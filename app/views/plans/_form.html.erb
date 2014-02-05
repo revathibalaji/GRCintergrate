@@ -1,0 +1,171 @@
+<html>
+<head>
+  <script>
+  $(function() {
+     $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+</head>
+<body>
+<%= form_for(@plan) do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+           <button class="btn btn-info"> New Plan</button>
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+  <div class="field">
+    <%= f.label :plan_title %><br />
+      Give the plan a title, name or code so it's easily identified on the plan list menu<br />
+    <%= f.text_field :plan_title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :plan_sponsor %><br />
+    Who is responsible for keeping this plan realitistic, communicateed and applicable? (quite a job, right?)<br />
+    <%= f.text_field :sponsor %>
+  </div>
+  <div class="field">
+    <%= f.label :launch_responsible %><br />
+    There should be someone who is authorized to lunch this plan (sometimes the Plan Sponsor)<br />
+    <%= f.text_field :responsible %>
+  </div>
+  <div class="field">
+    <%= f.label :recoverable_response %><br />
+    <%= f.text_field :recoverableresponse %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_status %><br />
+    Describe the status of the plan. Only productive plans are considered "live" plans!<br />
+    <%= f.select :planstatus, [[' ',' '],['Proposed','Proposed'],['Design','Design'],
+    ['Transition','Transition'],['Production','Production'],['Retired','Retired']] %>
+  </div>
+  <div class="field">
+    <%= f.label :recoverable_plan_type %><br />
+    <%= f.text_field :recoverableplantype %>
+  </div>
+  <div class="field">
+    <%= f.label :losstype %><br />
+    <%= f.text_field :losstype %>
+  </div>
+  <div class="field">
+    <%= f.label :emergency_response %><br />
+    <%= f.text_field :emergencyresponse %>
+  </div>
+  <div class="field">
+    <%= f.label :review_date%><br />
+    <%= f.text_field :review, :id=> :datepicker %>
+  </div>
+ 
+ </div>
+  </div>
+ </div>  
+
+ <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            <button class="btn btn-info"> Objective & Criteria &nbsp;<i class="icon-chevron-down"></i></button>
+            
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="field">
+             <%= f.label :plan_objective %><br>
+             Describe the plan objective, it should be something short and straightforward to understand.<br />
+            <%= f.text_area :plan_objective %>
+         </div>
+         <div class="field">
+            <%= f.label :audit_metric %><br />
+            Continuity plans without regular testing and audits are doomed to fail. Set your audit metric criteria (Response time?, etc)<br />
+            <%= f.text_area :auditmetric %>
+        </div>
+        <div class="field">
+          <%= f.label :sucess_criteria %><br />
+          Define a success criteria for the metric you have just defined (Under 2 hs, etc)<br />
+          <%= f.text_area :sucesscriteria %>
+       </div>
+        <div class="field">
+          <%= f.label :launch_criteria %><br />
+         Describe the criteria the plan responsible should use to know if it's appropiate to kick the plan or not in the case of an emergency.<br />
+         <%= f.text_area :launchcriteria %>
+         </div>
+          </div>
+        </div>
+      </div>    
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            <button class="btn btn-info"> Document Control</button>
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+              
+            </div>
+            <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attachment %>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+     <!--  <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            Governance Risk and Compliance
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Governance Risk and Compliance</p>
+          </div>
+        </div>
+      </div> -->
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            <button class="btn btn-info"> Approval , Review and  Distribution</button>
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+   <div class="actions">
+    <%= f.submit '+ Add New BCM Plan', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', plans_path , :class => "pure-button pure-button-primary"%>
+  </div>
+<% end %>
+</div>
+</body>
+</html>
+

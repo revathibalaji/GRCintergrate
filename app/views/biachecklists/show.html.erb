@@ -1,0 +1,86 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "layouts/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Divison department:</b>
+  <%= @biachecklist.Divison_Department %>
+</p>
+
+<p>
+  <b>Activity:</b>
+  <%= @biachecklist.activity %>
+</p>
+
+<p>
+  <b>Financial loss:</b>
+  <%= @biachecklist.financial_loss %>
+</p>
+
+<p>
+  <b>Reputation image:</b>
+  <%= @biachecklist.Reputation_image %>
+</p>
+
+<p>
+  <b>Stakeholder impact:</b>
+  <%= @biachecklist.Stakeholder_impact %>
+</p>
+
+<p>
+  <b>Regulatory statutory:</b>
+  <%= @biachecklist.Regulatory_Statutory %>
+</p>
+
+<p>
+  <b>Overall rating:</b>
+  <%= @biachecklist.overall_rating %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @biachecklist.comments %>
+</p>
+
+<p>
+  <b>Mao:</b>
+  <%= @biachecklist.mao %>
+</p>
+
+<p>
+  <b>Person interviewed:</b>
+  <%= @biachecklist.person_interviewed %>
+</p>
+
+<p>
+  <b>Facality:</b>
+  <%= @biachecklist.facality %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @biachecklist.date %>
+</p>
+
+<%= link_to "Create Report", biachecklist_path(@biachecklist, :format => "pdf") , :class => "pure-button pure-button-primary"  %>  
+<%= link_to 'Edit', edit_biachecklist_path(@biachecklist), :class => "pure-button pure-button-primary" %> 
+<%= link_to 'Back', biachecklists_path, :class => "pure-button pure-button-primary" %>
+     
+
+
+   </div>
+   <!--   <div id="footer">Footer</div> -->
+
+ </body>
+ </html>

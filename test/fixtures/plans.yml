@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plan_title: MyString
+  plan_objective: MyString
+  auditmetric: MyString
+  sucesscriteria: MyString
+  launchcriteria: MyString
+  sponsor: MyString
+  responsible: MyString
+  recoverableresponse: MyString
+  planstatus: MyString
+  recoverableplantype: MyString
+  losstype: MyString
+  emergencyresponse: MyString
+  review: MyString
+
+two:
+  plan_title: MyString
+  plan_objective: MyString
+  auditmetric: MyString
+  sucesscriteria: MyString
+  launchcriteria: MyString
+  sponsor: MyString
+  responsible: MyString
+  recoverableresponse: MyString
+  planstatus: MyString
+  recoverableplantype: MyString
+  losstype: MyString
+  emergencyresponse: MyString
+  review: MyString

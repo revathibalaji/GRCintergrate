@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "layouts/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Training name:</b>
+  <%= @test.training_name %>
+</p>
+
+<p>
+  <b>Training date:</b>
+  <%= @test.training_date %>
+</p>
+
+<p>
+  <b>Nexttraining date:</b>
+  <%= @test.nexttraining_date %>
+</p>
+
+<p>
+  <b>Trainingplan feedback:</b>
+  <%= @test.trainingplan_feedback %>
+</p>
+
+<p>
+  <b>Test date:</b>
+  <%= @test.test_date %>
+</p>
+
+<p>
+  <b>Test type:</b>
+  <%= @test.test_type %>
+</p>
+
+<p>
+  <b>Test responsible:</b>
+  <%= @test.test_responsible %>
+</p>
+
+<p>
+  <b>Test feedback:</b>
+  <%= @test.test_feedback %>
+</p>
+
+<p>
+  <b>Test status:</b>
+  <%= @test.test_status %>
+</p>
+
+<br><br>
+<%= link_to "Create Report", test_path(@test, :format => "pdf") , :class => "pure-button pure-button-primary"  %>       
+<%= link_to 'Edit', edit_test_path(@test), :class => "pure-button pure-button-primary" %> 
+<%= link_to 'Back', tests_path, :class => "pure-button pure-button-primary" %>
+
+   </div>
+   <!--   <div id="footer">Footer</div> -->
+
+ </body>
+ </html>

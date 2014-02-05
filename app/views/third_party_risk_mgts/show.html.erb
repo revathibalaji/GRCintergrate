@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "risklayout/menu" %>
+    </div>
+    <div id="content-wrap">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Risk title:</b>
+  <%= @third_party_risk_mgt.Risk_Title %>
+</p>
+
+<p>
+  <b>Applicable third parties:</b>
+  <%= @third_party_risk_mgt.Applicable_Third_Parties %>
+</p>
+
+<p>
+  <b>Applicable assets:</b>
+  <%= @third_party_risk_mgt.Applicable_Assets %>
+</p>
+
+<p>
+  <b>Why are assets shared with this tp:</b>
+  <%= @third_party_risk_mgt.Why_are_assets_shared_with_this_TP %>
+</p>
+
+<p>
+  <b>How it will be controled:</b>
+  <%= @third_party_risk_mgt.How_it_will_be_controled %>
+</p>
+
+<p>
+  <b>Threats:</b>
+  <%= @third_party_risk_mgt.Threats %>
+</p>
+
+<p>
+  <b></b>
+  <%= @third_party_risk_mgt.Threats1 %>
+</p>
+
+<p>
+  <b>Vulnerabilities:</b>
+  <%= @third_party_risk_mgt.Vulnerabilities %>
+</p>
+<p>
+  <b></b>
+  <%= @third_party_risk_mgt.Vulnerabilities1 %>
+</p>
+
+<p>
+  <b>Risk classification:</b>
+  <%= @third_party_risk_mgt.Risk_Classification %>
+</p><p>
+  <b></b>
+  <%= @third_party_risk_mgt.Risk_Classification1 %>
+</p><p>
+  <b></b>
+  <%= @third_party_risk_mgt.Risk_Classification2 %>
+</p>
+
+<p>
+  <b>Risk score:</b>
+  <%= @third_party_risk_mgt.Risk_Score %>
+</p>
+
+<p>
+  <b>Risk mitigation strategy:</b>
+  <%= @third_party_risk_mgt.Risk_Mitigation_Strategy %>
+</p>
+
+<p>
+  <b>Compensating controls:</b>
+  <%= @third_party_risk_mgt.Compensating_Controls %>
+</p>
+
+<p>
+  <b>Risk residual score:</b>
+  <%= @third_party_risk_mgt.Risk_Residual_Score %>
+</p>
+
+<p>
+  <b>Applicable risk exceptions:</b>
+  <%= @third_party_risk_mgt.Applicable_Risk_Exceptions %>
+</p>
+
+<p>
+  <b>Risk review periodicity:</b>
+  <%= @third_party_risk_mgt.Risk_Review_Periodicity %>
+</p>
+
+      <%= link_to "Show Report", third_party_risk_mgt_path(@third_party_risk_mgt, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_third_party_risk_mgt_path(@third_party_risk_mgt) , :class => "pure-button pure-button-primary" %> 
+      <!--      <%= link_to 'Back', businessunits_path , :class => "pure-button pure-button-primary" %> -->
+
+      <%= link_to 'New ThirdParty', new_third_party_risk_mgt_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>

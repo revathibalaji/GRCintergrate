@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title></title>
+    <%= javascript_include_tag "/js/highcharts.js", "chartkick" %>
+    <script type="text/javascript" src ="js/themes/grid.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div><center><img src="/images/fixnix.png"></center></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "layouts/menu" %>
+        </div>
+        <table>
+            <tr>
+                <td>
+            <div class="chart">
+                <div>
+                    <p>BCM Plan</p>
+                    <%= pie_chart Plan.group("plan_title").count %>
+                </div>
+        </div>
+    </td>
+    <td>
+            <div class="chart">
+                <div>
+                    <p>BCM Risk</p>
+                    <%= pie_chart Risk.group("risk_id").count %>
+                </div>
+            </div>
+    </td>
+</tr>
+<tr>
+    <td>
+            <div class="chart">
+                <div>
+                    <p>Crisis</p>
+                    <%= bar_chart Crisis.group("crisis_id").count %>
+                </div>
+            </div>
+    </td>
+    <td>
+            <div class="chart">
+                <div>
+                    <p>Training & Test</p>
+                     <%= bar_chart Test.group("training_name").count %>
+                </div>
+            </div>
+    </td>
+</tr>
+</table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

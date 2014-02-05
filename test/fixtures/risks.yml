@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  risk_id: MyString
+  risk: MyString
+  consequence_current: MyString
+  consequence_target: MyString
+  likelihood_current: MyString
+  likelihood_target: MyString
+  risk_level: MyString
+
+two:
+  risk_id: MyString
+  risk: MyString
+  consequence_current: MyString
+  consequence_target: MyString
+  likelihood_current: MyString
+  likelihood_target: MyString
+  risk_level: MyString

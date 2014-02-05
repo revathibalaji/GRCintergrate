@@ -1,0 +1,179 @@
+<div class="pure-u" id="menu">
+	<div class="pure-menu pure-menu-open">
+		<ul>
+			<li class="fancy">
+				<a href="main/index">
+					<i  class="icon-home"></i>					 
+					<span>Home</span>
+				</a>
+			</li>
+			
+			<li class="fancy">
+				<a href="/riskdashboard">
+					<i  class="icon-eye-open"></i>
+					<span>Risk Dashboard</span>
+				</a>
+			</li>
+
+			<!--li>
+				<a href="/policies">
+					<i class="icon-file-text"></i>
+					<span >Risk Management</span> 
+				</a>
+			</li-->
+
+			<li>
+				<a href="#">
+					<i  class="icon-list-alt"></i>
+					<span >Reporting</span>
+				</a>
+			</li>
+
+			<!--li>
+				<a href="/businessunits">
+					<i  class="icon-building"></i>
+					<span >Risk Classification1</span>
+				</a>
+			</li-->
+
+			<li>
+				<a href="/risk_classifications">
+					<i class="icon-group"></i>
+					<span >Risk Classification</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/asset_risk_mgts">
+					<i class="icon-group"></i>
+					<span >Asset Risk Mgt</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/risk_exceptions">
+					<i class="icon-group"></i>
+					<span >Risk Exception</span>
+				</a>
+			</li>
+
+			<!--li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >All Open Risks Considered for Projects by Risk Level</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >All Open Risks Accepted Until Next Review by Risk Level</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >All Open Risks to Submit as a Production Issue by Risk Level</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >All Open Risks Scored Using CVSS Scoring by Risk Level</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >All Open Risks Scored Using Classic Scoring by Risk Level</span>
+				</a>
+			</li-->
+
+			<li>
+				<a href="/third_party_risk_mgts">
+					<i class="icon-group"></i>
+					<span >Third Party Risk Mgt</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/bu_risk_mgts">
+					<i class="icon-group"></i>
+					<span >BU Risk Mgt</span>
+				</a>
+			</li>
+
+			<!--li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >Mitigations By Date</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >Management Reviews By Date</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-group"></i>
+					<span >Projects and Risks Assigned </span>
+				</a>
+			</li-->
+
+			<li>
+				<a href="/calendar">
+					<i  class="icon-calendar"></i>
+					<span >Calendar</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i  class="icon-archive"></i>
+					<span >Archive</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i  class="icon-envelope"></i>
+					<span >Notification</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="icon-trophy"></i>
+					<span>Test</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class= "icon-user"></i>
+					<% if user_signed_in? %>
+				<strong><%= current_user.email %></strong>
+				<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+				<% end %>
+				</a>
+			</li>
+
+			<li>
+				<% if user_signed_in? %>
+				<!-- Signed in as <%= current_user.email %>. Not you? -->
+				<%= link_to '<i class= "icon-signout"></i> <span>Sign Out</span>'.html_safe, destroy_user_session_path, :method => :delete %>
+				<% else %>
+                 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+				<% end %>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "layouts/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Crisis:</b>
+  <%= @crisis.crisis_id %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @crisis.summary %>
+</p>
+
+<p>
+  <b>Datetime occured:</b>
+  <%= @crisis.Datetime_occured %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @crisis.Details %>
+</p>
+
+<p>
+  <b>Crisis status:</b>
+  <%= @crisis.crisis_status %>
+</p>
+
+<p>
+  <b>Crisis category:</b>
+  <%= @crisis.crisis_Category %>
+</p>
+
+<p>
+  <b>Crisis test:</b>
+  <%= @crisis.crisis_test %>
+</p>
+
+<p>
+  <b>Crisis type:</b>
+  <%= @crisis.crisis_type %>
+</p>
+
+<p>
+  <b>Crisis severity:</b>
+  <%= @crisis.crisis_severity %>
+</p>
+<br><br>
+<%= link_to "Create Report", crisis_path(@crisis, :format => "pdf") , :class => "pure-button pure-button-primary"  %>       
+<%= link_to 'Edit', edit_crisis_path(@crisis), :class => "pure-button pure-button-primary" %> 
+<%= link_to 'Back', crises_path, :class => "pure-button pure-button-primary" %>
+
+   </div>
+   <!--   <div id="footer">Footer</div> -->
+
+ </body>
+ </html>
+

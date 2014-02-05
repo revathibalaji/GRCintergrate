@@ -1,0 +1,2 @@
+module RiskdashboardHelper
+end

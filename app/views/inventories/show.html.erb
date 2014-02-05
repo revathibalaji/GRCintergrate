@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "assetlayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+  <b>Operating unit / function:</b>
+  <%= @inventory.op_function %>
+</p>
+
+<p>
+  <b>Process name:</b>
+  <%= @inventory.pro_name %>
+</p>
+
+<p>
+  <b>Process owner:</b>
+  <%= @inventory.pro_owner %>
+</p>
+
+<p>
+  <b>Asset name:</b>
+  <%= @inventory.asset_name %>
+</p>
+
+<p>
+  <b>Description asset:</b>
+  <%= @inventory.des_asset %>
+</p>
+
+<p>
+  <b>Type asset:</b>
+  <%= @inventory.type_asset %>
+</p>
+
+<p>
+  <b>Personal data:</b>
+  <%= @inventory.personal_data %>
+</p>
+
+<p>
+  <b>Personal sensitive data:</b>
+  <%= @inventory.personal_sensitive_data %>
+</p>
+
+<p>
+  <b>Sensitive customer data:</b>
+  <%= @inventory.sensitive_customer_data %>
+</p>
+
+<p>
+  <b>Classification:</b>
+  <%= @inventory.classification %>
+</p>
+
+<p>
+  <b>Integrity:</b>
+  <%= @inventory.integrity %>
+</p>
+
+<p>
+  <b>Availability:</b>
+  <%= @inventory.availability %>
+</p>
+
+<p>
+  <b>Asset custodian:</b>
+  <%= @inventory.asset_custodian %>
+</p>
+
+<p>
+  <b>Data retention period:</b>
+  <%= @inventory.data_retention_period %>
+</p>
+
+<p>
+  <b>At origin:</b>
+  <%= @inventory.at_origin %>
+</p>
+
+<p>
+  <b>Information is moved:</b>
+  <%= @inventory.info_moved_des %>
+</p>
+
+       <%= link_to "Create PDF", inventory_path(@inventory, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+       <%= link_to 'Edit', edit_inventory_path(@inventory) , :class => "pure-button pure-button-primary"  %> 
+       <%= link_to 'New Asset', new_inventory_path , :class => "pure-button pure-button-primary"  %>
+
+     </div>
+   </div>
+   <!--   <div id="footer">Footer</div> -->
+
+ </body>
+ </html>
+

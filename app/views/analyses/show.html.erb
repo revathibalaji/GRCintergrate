@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "assetlayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+  <b>Name:</b>
+  <%= @analysis.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @analysis.description %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @analysis.status %>
+</p>
+
+<p>
+  <b>Status description:</b>
+  <%= @analysis.status_description %>
+</p>
+
+<p>
+  <b>Compensating controls:</b>
+  <%= @analysis.compensating_controls %>
+</p>
+
+
+      <%= link_to "Create PDF", analysis_path(@analysis, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_analysis_path(@analysis) , :class => "pure-button pure-button-primary" %> 
+      <!--      <%= link_to 'Back', businessunits_path , :class => "pure-button pure-button-primary" %> -->
+
+      <%= link_to 'New Analyses', new_analysis_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>
+

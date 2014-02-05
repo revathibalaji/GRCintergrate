@@ -1,0 +1,92 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "layouts/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <b>Plan title:</b>
+  <%= @plan.plan_title %>
+</p>
+
+<p>
+  <b>Plan objective:</b>
+  <%= @plan.plan_objective %>
+</p>
+
+<p>
+  <b>Auditmetric:</b>
+  <%= @plan.auditmetric %>
+</p>
+
+<p>
+  <b>Sucesscriteria:</b>
+  <%= @plan.sucesscriteria %>
+</p>
+
+<p>
+  <b>Launchcriteria:</b>
+  <%= @plan.launchcriteria %>
+</p>
+
+<p>
+  <b>Sponsor:</b>
+  <%= @plan.sponsor %>
+</p>
+
+<p>
+  <b>Responsible:</b>
+  <%= @plan.responsible %>
+</p>
+
+<p>
+  <b>Recoverableresponse:</b>
+  <%= @plan.recoverableresponse %>
+</p>
+
+<p>
+  <b>Planstatus:</b>
+  <%= @plan.planstatus %>
+</p>
+
+<p>
+  <b>Recoverableplantype:</b>
+  <%= @plan.recoverableplantype %>
+</p>
+
+<p>
+  <b>Losstype:</b>
+  <%= @plan.losstype %>
+</p>
+
+<p>
+  <b>Emergencyresponse:</b>
+  <%= @plan.emergencyresponse %>
+</p>
+
+<p>
+  <b>Review:</b>
+  <%= @plan.review %>
+</p>
+<p>
+    <a href="<%= @plan.attachment.url %> ">
+    <b> File attached </b></a>
+</p> 
+<%= link_to "Create Report", plan_path(@plan, :format => "pdf") , :class => "pure-button pure-button-primary"  %>       
+<%= link_to 'Edit', edit_plan_path(@plan), :class => "pure-button pure-button-primary" %> 
+<%= link_to 'Back', plans_path , :class => "pure-button pure-button-primary" %>
+
+   </div>
+   <!--   <div id="footer">Footer</div> -->
+
+ </body>
+ </html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+    $( "#datepicker1" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+    $( "#datepicker2" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+</head>
+<body>
+  <%= form_for(@test) do |f| %>
+  <% if @test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h2>
+
+      <ul>
+      <% @test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Training
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+            <div class="field">
+             <%= f.label :training_name %><br />
+                 <%= f.text_field :training_name %>
+               </div>
+               <div class="field">
+                 <%= f.label :training_date %><br />
+                 <%= f.text_field :training_date, :id=> :datepicker %>
+               </div>
+               <div class="field">
+                 <%= f.label :next_training_date %><br />
+                 <%= f.text_field :nexttraining_date, :id=> :datepicker1 %>
+               </div>
+               <div class="field">
+                 <%= f.label :training_plan_feedback %><br />
+                 <%= f.select :trainingplan_feedback, [[' ',' '],['Excellent','Excellent'],
+                 ['Very Good','Very Good'],['Good','Good'],['Poor','Poor']] %>
+               </div>
+               <div class="field">
+                 <%= f.label :test_date %><br />
+                 <%= f.text_field :test_date, :id=> :datepicker2 %>
+               </div>
+               <div class="field">
+                 <%= f.label :test_type %><br />
+                 <%= f.select :test_type, [[' ',' '],['Writable','Writable'],['Mock Calls','Mock Calls'],['Scenario','Scenario']] %>
+               </div>
+               <div class="field">
+                 <%= f.label :test_responsible %><br />
+                 <%= f.text_field :test_responsible %>
+               </div>
+               <div class="field">
+                 <%= f.label :test_feedback %><br />
+                  <%= f.select :test_feedback, [[' ',' '],['Excellent','Excellent'],
+                 ['Very Good','Very Good'],['Good','Good'],['Poor','Poor']] %>
+               </div>
+               <div class="field">
+                 <%= f.label :test_status %><br />
+                 <%= f.select :test_status, [[' ',' '],['Proposed','Proposed'],['Design','Design'],
+                 ['Transition','Transition'],['Production','Production'],['Retired','Retired']] %>
+               </div>
+          </div>
+        </div>
+      </div>      
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            Document Control
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+              
+            </div>
+            <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attach %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            Approval , Review and  Distribution
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+   <div class="actions">
+    <%= f.submit '+ Add New Traning', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', tests_path , :class => "pure-button pure-button-primary"%>
+  </div>
+<% end %>
+</div>
+</body>
+</html>
+ 

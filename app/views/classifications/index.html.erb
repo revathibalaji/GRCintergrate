@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "assetlayout/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#Policy" data-toggle="tab">Asset Classification</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+
+                            <table class="table table-bordered">
+                              <tr>
+    <th>C type</th>
+    <th>Name</th>
+    <th>A type</th>
+    <th>Criteria</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @classifications.each do |classification| %>
+  <tr>
+    <td><%= classification.c_type %></td>
+    <td><%= classification.name %></td>
+    <td><%= classification.a_type %></td>
+    <td><%= classification.criteria %></td>
+    <td><%= classification.value %></td>
+    <td><%= link_to 'Show', classification %></td>
+    <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
+    <td><%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+                        <br />
+
+                        <%= link_to 'New Classification', new_classification_path , :class => "pure-button pure-button-primary"  %>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>
+
+
+
+
+
+<h1>Listing classifications</h1>
+
+<table>
+  <tr>
+    <th>Classification type</th>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Criteria</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @classifications.each do |classification| %>
+  <tr>
+    <td><%= classification.c_type %></td>
+    <td><%= classification.name %></td>
+    <td><%= classification.a_type %></td>
+    <td><%= classification.criteria %></td>
+    <td><%= classification.value %></td>
+    <td><%= link_to 'Show', classification %></td>
+    <td><%= link_to 'Edit', edit_classification_path(classification) %></td>
+    <td><%= link_to 'Destroy', classification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Classification', new_classification_path %>

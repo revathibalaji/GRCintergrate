@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="header">
+		<div><img src="/images/fixnix.png"></div>
+	</div>
+	<div id="main-wrap">
+		<div id="sidebar">
+			<%= render :partial => "layouts/menu" %>
+		</div>
+		<div id="content-wrap">
+			<div class="span12 offset well"> 
+				<h1>Editing Plan</h1>
+
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div id="footer">Footer</div> -->
+
+<%= link_to 'Show', @plan %> |
+<%= link_to 'Back', plans_path %>
+
+</body>
+</html>

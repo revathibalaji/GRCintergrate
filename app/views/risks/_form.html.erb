@@ -1,0 +1,129 @@
+<html>
+<head>
+  <script>
+  $(function() {
+     $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "/images/calendar.jpg",
+      buttonImageOnly: true
+    });
+  });
+  </script>
+</head>
+<body>
+  <%= form_for(@risk) do |f| %>
+  <% if @risk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@risk.errors.count, "error") %> prohibited this risk from being saved:</h2>
+
+      <ul>
+      <% @risk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Risk
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :risk_id %>
+  </div>
+  <div class="field">
+    <%= f.label :risk_by %><br />
+    <%= f.select :risk, [[' ',' '],['Loss of IT',''],
+        ['Building',''],['Staff','Staff'],['Cyber Attack','Cyber Attack'],['Earthquake','Earthquake'],['Fire','Fire'],
+        ['Terroist Attack','Terroist Attack'],['Forest Fire','Forest Fire'], ['Flood','Flood'],
+        ['Tornado','Tornado']] %>
+  </div>
+  <div class="field">
+    <%= f.label :consequence_current %><br />
+    <%= f.select :consequence_current, [[' ',' '],['Insignificant','Insignificant'],
+        ['Minor','Minor'],['Moderate','Moderate'],['Major','Major'],['Catastropic','Catastropic']] %>
+  </div>
+  <div class="field">
+    <%= f.label :consequence_target %><br />
+    <%= f.select :consequence_target, [[' ',' '],['Insignificant','Insignificant'],
+        ['Minor','Minor'],['Moderate','Moderate'],['Major','Major'],['Catastropic','Catastropic']] %>
+  </div>
+  <div class="field">
+    <%= f.label :likelihood_current %><br />
+    <%= f.select :likelihood_current, [[' ',' '],['Moderate','Moderate'],['Rare','Rare'],
+                 ['Unlikely','Unlikely']] %>
+  </div>
+  <div class="field">
+    <%= f.label :likelihood_target %><br />
+    <%= f.select :likelihood_target, [[' ',' '],['Moderate','Moderate'],['Rare','Rare'],
+                 ['Unlikely','Unlikely']] %>
+  </div>
+  <div class="field">
+    <%= f.label :risk_level %><br />
+    <%= f.select :risk_level, [[' ',' '],['Extreme','Extreme'],['High','High'],
+                 ['Low','Low']] %>
+  </div>
+ </div>
+        </div>
+      </div>      
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsethree">
+            Document Control
+          </a>
+        </div>
+        <div id="collapsethree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <b> Document Title </b><br/>
+              
+            </div>
+             <div class="control-group">
+              <b> Attachment </b><br/>
+              <%= f.file_field :attachment %>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!--  <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefour">
+            Governance Risk and Compliance
+          </a>
+        </div>
+        <div id="collapsefour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Governance Risk and Compliance</p>
+          </div>
+        </div>
+      </div> -->
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive">
+            Approval , Review and  Distribution
+          </a>
+        </div>
+        <div id="collapsefive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <p>Approval , Review and  Distribution</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+   <div class="actions">
+    <%= f.submit '+ Add New Risk', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', risks_path , :class => "pure-button pure-button-primary"%>
+  </div>
+<% end %>
+</div>
+</body>
+</html>

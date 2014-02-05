@@ -1,0 +1,46 @@
+<%= form_for(@risk_classification) do |f| %>
+  <% if @risk_classification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@risk_classification.errors.count, "error") %> prohibited this risk_classification from being saved:</h2>
+
+      <ul>
+      <% @risk_classification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="span11 offset well">
+  <div class="form-horizontal">
+
+    <div class="control-group">
+     <%= f.label :Classification_Type %><br />
+    <%= f.text_field :Classification_Type %><br />
+    </div>
+    <div class="control-group">
+    <%= f.select :Classification_Type1 ,[["",""],["Laptop","Laptop"],["Computer","Computer"]]  %>
+    </div>
+    <div class="control-group">
+     <%= f.label :Name %><br />
+    <%= f.text_field :Name %>
+    </div>
+    <div class="control-group">
+      <%= f.label :Classification_criteria %><br />
+    <%= f.text_field :Classification_criteria %>
+    </div>
+    <div class="control-group">
+      <%= f.label :value %><br />
+    <%= f.number_field :value %>
+    </div>
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+    
+<div class="control-group">
+      <!--%= f.submit 'Create Risk Classificat', :class => "pure-button pure-button-primary"%><-->
+      <%= link_to 'Cancel', risk_classifications_path , :class => "pure-button pure-button-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

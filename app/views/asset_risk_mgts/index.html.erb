@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="header">
+        <div><img src="/images/fixnix.png"></div>
+    </div>
+    <div id="main-wrap">
+        <div id="sidebar">
+            <%= render :partial => "risklayout/menu" %>
+        </div>
+        <div id="content-wrap">
+            <div class="sapn10 offset well">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#asset_risk_mgts" data-toggle="tab">Asset Risk Mgts</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Policy" class="tab-pane active">
+
+
+<h1>Listing Asset Risk Mgts</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Risk title</th>
+    <th>Applicable assets</th>
+    <th>Threats</th>
+    <th></th>
+    <th>Vulnerabilities</th>
+    <th></th>
+    <th>Risk classification</th>
+    <th></th>
+    <th></th>
+    <th>Risk score</th>
+    <th>Risk mitigation strategy</th>
+    <th>Compensating controls</th>
+    <th>Risk residual score</th>
+    <th>Applicable risk exceptions</th>
+    <th>Risk review periodicity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @asset_risk_mgts.each do |asset_risk_mgt| %>
+  <tr>
+    <td><%= asset_risk_mgt.Risk_Title %></td>
+    <td><%= asset_risk_mgt.Applicable_Assets %></td>
+    <td><%= asset_risk_mgt.Threats %></td>
+    <td><%= asset_risk_mgt.Threats1 %></td>
+    <td><%= asset_risk_mgt.Vulnerabilities %></td>
+    <td><%= asset_risk_mgt.Vulnerabilities1 %></td>
+    <td><%= asset_risk_mgt.Risk_Classification %></td>
+    <td><%= asset_risk_mgt.Risk_Classification1 %></td>
+    <td><%= asset_risk_mgt.Risk_Classification2 %></td>
+    <td><%= asset_risk_mgt.Risk_Score %></td>
+    <td><%= asset_risk_mgt.Risk_Mitigation_Strategy %></td>
+    <td><%= asset_risk_mgt.Compensating_Controls %></td>
+    <td><%= asset_risk_mgt.Risk_Residual_Score %></td>
+    <td><%= asset_risk_mgt.Applicable_Risk_Exceptions %></td>
+    <td><%= asset_risk_mgt.Risk_Review_periodicity %></td>
+    <td><%= link_to 'Show', asset_risk_mgt %></td>
+    <td><%= link_to 'Edit', edit_asset_risk_mgt_path(asset_risk_mgt) %></td>
+    <td><%= link_to 'Destroy', asset_risk_mgt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+                        <%= link_to 'New Asset risk mgt', new_asset_risk_mgt_path , :class => "pure-button pure-button-primary"  %>
+                    </div>
+                </div><!-- /.tab-content -->
+            </div><!-- /.tabbable -->
+        </div>
+    </div>
+</div>
+<!-- <div id="footer">Footer</div> -->
+</body>
+</html>

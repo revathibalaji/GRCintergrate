@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+      <%= render :partial => "policylayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+  <b>Membername:</b>
+  <%= @member.membername %>
+</p>
+<p>
+  <b>Department:</b>
+  <%= @member.department %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @member.role %>
+</p>
+
+      	<%= link_to 'Edit', edit_member_path(@member), :class => "pure-button pure-button-primary" %>
+		<%= link_to 'Back', members_path, :class => "pure-button pure-button-primary" %>
+
+    </l>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>
+

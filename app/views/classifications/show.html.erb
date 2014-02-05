@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="header">
+    <div><img src="/images/fixnix.png"></div>
+  </div>
+  <div id="main-wrap">
+    <div id="sidebar">
+     <%= render :partial => "assetlayout/menu" %>
+    </div>
+    <div id="content-wrap">
+      <p id="notice"><%= notice %></p>
+
+      <p>
+  <b>Classification Type:</b>
+  <%= @classification.c_type %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @classification.name %>
+</p>
+
+<p>
+  <b>Asset type:</b>
+  <%= @classification.a_type %>
+</p>
+
+<p>
+  <b>Criteria:</b>
+  <%= @classification.criteria %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @classification.value %>
+</p>
+
+
+      <%= link_to "Create PDF", classification_path(@classification, :format => "pdf") , :class => "pure-button pure-button-primary"  %>
+      <%= link_to 'Edit', edit_classification_path(@classification) , :class => "pure-button pure-button-primary" %> 
+      <!--      <%= link_to 'Back', businessunits_path , :class => "pure-button pure-button-primary" %> -->
+
+      <%= link_to 'New Asset Type', new_classification_path , :class => "pure-button pure-button-primary"  %>
+
+    </div>
+  </div>
+  <!--   <div id="footer">Footer</div> -->
+
+</body>
+</html>

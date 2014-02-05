@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ambulance: MyString
+  electric: MyString
+  fire: MyString
+  gas_heat: MyString
+  hospital: MyString
+  insurance: MyString
+  location: MyString
+  newspaper: MyString
+  police: MyString
+  radio: MyString
+  telephone: MyString
+  tvchannel: MyString
+
+two:
+  ambulance: MyString
+  electric: MyString
+  fire: MyString
+  gas_heat: MyString
+  hospital: MyString
+  insurance: MyString
+  location: MyString
+  newspaper: MyString
+  police: MyString
+  radio: MyString
+  telephone: MyString
+  tvchannel: MyString

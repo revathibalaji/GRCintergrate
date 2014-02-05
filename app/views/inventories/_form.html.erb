@@ -1,0 +1,103 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="span11 offset well">
+  <div class="form-horizontal">
+    <div class="accordion " id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            New Asset 
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+            <div class="control-group">
+              <%= f.label "Operating Unit / function" %><br />
+              <%= f.text_field :op_function %>
+            </div>
+            <div class="control-group">
+              <%= f.label "process name" %><br />
+              <%= f.text_field :pro_name %>
+            </div>
+            <div class="control-group">
+              <%= f.label "process owner" %><br />
+              <%= f.text_field :pro_owner %>
+            </div>
+            <div class="control-group">
+              <%= f.label "asset of name" %><br />
+              <%= f.text_field :asset_name %>
+            </div>  
+            <div class="control-group">
+              <%= f.label "description of asset" %><br />
+              <%= f.text_field :des_asset %>
+            </div> 
+            <div class="control-group">
+              <%= f.label "type of information asset" %><br />
+              <%= f.text_field :type_asset %>
+            </div> 
+            <div class="control-group">
+              <%= f.label "personal data" %><br />
+              <%=f.radio_button :personal_data, 'Yes' %><%= f.label 'Yes' %>
+              <%=f.radio_button :personal_data, 'No' %><%= f.label 'No' %>
+            </div> 
+            <div class="control-group">
+              <%= f.label "personal sensitive data" %><br />              
+              <%=f.radio_button :personal_sensitive_data, 'Yes' %><%= f.label 'Yes' %>
+              <%=f.radio_button :personal_sensitive_data, 'No' %><%= f.label 'No' %>
+            </div>
+            <div class="control-group">
+              <%= f.label "sensitive customer data" %><br />              
+              <%=f.radio_button :sensitive_customer_data, 'Yes' %><%= f.label 'Yes' %>
+              <%=f.radio_button :sensitive_customer_data, 'No' %><%= f.label 'No' %>
+            </div>
+            <div class="control-group">
+              <%= f.label "classification" %><br />
+              <%= f.text_field :classification %>
+            </div>
+            <div class="control-group">
+              <%= f.label "integrity" %><br />
+              <%= f.text_field :integrity %>
+            </div>
+            <div class="control-group">
+              <%= f.label "availability" %><br />
+              <%= f.text_field :availability %>
+            </div>
+            <div class="control-group">
+              <%= f.label "asset custodian" %><br />
+              <%= f.text_field :asset_custodian %>
+            </div>
+            <div class="control-group">
+              <%= f.label "data retention period" %><br />
+              <%= f.text_field :data_retention_period %>
+            </div>
+            <div class="control-group">
+              <%= f.label "at origin" %><br />
+              <%= f.text_field :at_origin %>
+            </div>
+            <div class="control-group">
+              <%= f.label "information is moved" %><br />
+              <%= f.text_field :info_moved_des %>
+            </div>
+
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+  <br>
+  <div>
+    <%= f.submit 'Create Asset', :class =>  "pure-button pure-button-primary"%>
+    <%= link_to 'Cancel', inventories_path , :class => "pure-button pure-button-primary"%>
+  </div>
+  <% end %>
+</div>
